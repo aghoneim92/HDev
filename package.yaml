@@ -1,0 +1,52 @@
+name: hdev
+version: 0.1.0.0
+github: "aghoneim92/hdev"
+license: MIT
+author: "Ahmed Ghoneim"
+maintainer: "ahmedghoneim92@gmail.com"
+copyright: "2018 Ahmed Ghoneim"
+
+extra-source-files:
+  - README.md
+  - ChangeLog.md
+
+  # Metadata used when publishing your package
+  # synopsis:            Short description of your package
+  # category:            Web
+
+  # To avoid duplicated efforts in documentation and dealing with the
+  # complications of embedding Haddock markup inside cabal files, it is
+  # common to point users to the README.md file.
+description: Please see the README on GitHub at
+  <https://github.com/aghoneim92/hdev#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - cmdargs >= 0.10
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - HDev
+
+executables:
+  hdev:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - hdev
+
+tests:
+  hdev-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - hdev

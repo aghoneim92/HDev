@@ -1,0 +1,4 @@
+.stack-work/
+hdev.cabal
+*~
+dist/
